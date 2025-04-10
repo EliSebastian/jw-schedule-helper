@@ -1,3 +1,5 @@
 class Participant < ApplicationRecord
-  enum gender: { male: 0, female: 1 }
+  validates :name, :gender, presence: true
+
+  enum :gender, { male: 0, female: 1 }, validate: true
 end
