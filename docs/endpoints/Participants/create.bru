@@ -1,0 +1,18 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/participants
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Elias",
+    "gender": "male"
+  }
+}
