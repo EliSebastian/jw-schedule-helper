@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "jw-schedule-helper",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
