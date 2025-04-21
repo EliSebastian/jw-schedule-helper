@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_21_214215) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_21_215219) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "assignments", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
-    t.integer "allowed_gender"
+    t.integer "allowed_gender", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
