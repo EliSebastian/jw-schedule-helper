@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :participants, only: [:create]
+  resources :assignments, only: [:create]
 end
