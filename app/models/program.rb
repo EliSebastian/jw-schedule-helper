@@ -1,4 +1,7 @@
 class Program < ApplicationRecord
+  has_many :program_assignments, dependent: :destroy
+  has_many :assignments, through: :program_assignments
+
   validates :name, :start_date, :end_date, presence: true
 
   validate :start_date_cannot_be_after_end_date
