@@ -6,7 +6,7 @@ module Participants
 
       render json: { errors: participant.errors }, status: :unprocessable_entity and return unless @participant.save
 
-      render json: { message: 'Assignments updated successfully' }, status: :ok
+      render json: { message: 'Participant Assignments updated successfully' }, status: :ok
     end
 
     private
