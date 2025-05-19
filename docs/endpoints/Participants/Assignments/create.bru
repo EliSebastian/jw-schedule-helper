@@ -1,0 +1,23 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}//participants/:participant_id/assignments
+  body: json
+  auth: inherit
+}
+
+params:path {
+  participant_id: 1
+}
+
+body:json {
+  {
+    "assignment": {
+      "assignment_ids": [1,2]
+    }
+  }
+}
