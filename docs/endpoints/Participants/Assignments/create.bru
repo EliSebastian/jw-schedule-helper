@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: {{url}}//participants/:participant_id/assignments
+  url: {{url}}/participants/:participant_id/assignments
   body: json
   auth: inherit
 }
@@ -17,7 +17,7 @@ params:path {
 body:json {
   {
     "assignment": {
-      "assignment_ids": [1,2]
+      "assignment_ids": [1]
     }
   }
 }
