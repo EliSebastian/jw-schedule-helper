@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :participants, only: [:create] do
     resources :assignments, only: [:create], module: :participants
   end
+  resources :programs, only: [:create] do
+    resources :assignments, only: [:create], module: :programs
+  end
 
   resources :assignments, only: [:create]
-  resources :programs, only: [:create]
 end
