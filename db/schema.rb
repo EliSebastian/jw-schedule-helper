@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_19_200200) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_19_205050) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -38,6 +38,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_19_200200) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "program_assignments", force: :cascade do |t|
+    t.bigint "program_id", null: false
+    t.bigint "assignment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assignment_id"], name: "index_program_assignments_on_assignment_id"
+    t.index ["program_id"], name: "index_program_assignments_on_program_id"
+  end
+
   create_table "programs", force: :cascade do |t|
     t.string "name"
     t.date "start_date"
@@ -48,4 +57,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_19_200200) do
 
   add_foreign_key "participant_assignments", "assignments"
   add_foreign_key "participant_assignments", "participants"
+  add_foreign_key "program_assignments", "assignments"
+  add_foreign_key "program_assignments", "programs"
 end
